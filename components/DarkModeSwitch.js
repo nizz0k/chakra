@@ -28,9 +28,10 @@ const DarkModeSwitch = () => {
         light: 'black',
         dark: 'white'
     }
+
     const StickyNav = styled(Flex)`
     position: sticky;
-    z-index: 10;
+    z-index: 2000;
     top: 0;
     backdrop-filter: saturate(180%) blur(20px);
     transition: height .5s, line-height .5s;
@@ -41,15 +42,12 @@ const DarkModeSwitch = () => {
     flexDir="row"
     justify="space-between"
     alignItems="center"
-    maxWidth="1000px"
-    midWidth="max-content"
     width="100%"
     bg={bgColor[colorMode]}
     color={color[colorMode]}
     as="nav"
     px={[2, 6, 6]}
     py={2}
-    mt={8}
     mb={[0, 0, 8]}
     mx="auto"
     >    
@@ -57,15 +55,14 @@ const DarkModeSwitch = () => {
         align="center"
         justify="space-between"
         flexDirection="row"
+        width="100%"
         >
         <SiteLogo />
-        <Spacer />
         <Flex >
         <Flex 
         display={['none', 'none', 'flex', 'flex']}
         ml="auto"
         justifySelf="end"
-       
             >
             <NextLink href="/" passHref>
                 <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
@@ -103,7 +100,6 @@ const DarkModeSwitch = () => {
     <Flex 
     w="100vw"
     bgColor="gray.500"
-    zIndex={20}
     h="100vh"
     pos="fixed"
     top="0"
@@ -111,6 +107,7 @@ const DarkModeSwitch = () => {
     overflow="auto"
     flexDir="column"
     display={display}
+    position='absolute'
     >
     <Flex 
         justify="flex-end"
@@ -128,20 +125,21 @@ const DarkModeSwitch = () => {
         <Flex
         flexDirection="column"
         align="center"
-        justify="flex-end"
+        justify="space-between"
+        mb='50%'
         >
             <NextLink href="/" passHref>
-                <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
+                <Button as="a" variant="ghost" p={[4, 4, 10]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
                     Home
                 </Button>
             </NextLink>
             <NextLink href="/map" passHref>
-                <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
+                <Button as="a" variant="ghost" p={[4, 4, 10]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
                      Map
                 </Button>
             </NextLink>
             <NextLink href="/about" passHref>
-                <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
+                <Button as="a" variant="ghost" p={[4, 4, 10]} _hover={{backgroundColor: navHoverBg[colorMode]}}>
                     About
                 </Button>
             </NextLink>

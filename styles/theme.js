@@ -10,12 +10,13 @@ const fonts = {
 }
 
 const breakpoints = {
-    sm: "40em",
-    md: "52em",
-    lg: "64em",
-    xl: "80em",
-}
- 
+    sm: '320px',
+    md: '768px',
+    lg: '960px',
+    xl: '1200px',
+    '2xl': '1536px',
+  }
+  
 const overrides = {
     ...chakraTheme, 
     fonts,

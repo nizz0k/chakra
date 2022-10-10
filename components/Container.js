@@ -2,8 +2,10 @@ import React from "react";
 import {
     useColorMode,
     Flex,
+    Box
 } from '@chakra-ui/react'
 import DarkModeSwitch from '../components/DarkModeSwitch'
+import Footer from "./Footer";
 
 const Container = ({children}) => {
 
@@ -28,12 +30,12 @@ const Container = ({children}) => {
         flexDirection="column"
         bg={bgColor[colorMode]}
         color={color[colorMode]}
-        px={[0, 4, 4]}
-        mt={[4, 8, 8]}
+        width='100%'
+        
     >
         {children}
     </Flex>
-    
+    <Footer />
     </>
     )
    
