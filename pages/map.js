@@ -6,15 +6,18 @@ import {
 } from '@chakra-ui/react'
 import dynamic from 'next/dynamic';
 import Container from '../components/Container'
-import { loadPoints } from '../lib/loadpoints';
+import points from '../data/pengs.json'
 
-export async function getStaticProps(){
-    const points = await loadPoints()
-    return {props: points}
+export async function getStaticProps(context){
+   return{
+    props: {
+        points,
+    }
+   }
 }
 
 export default function MapPage(props) {
-
+console.log(props.points)
 const {colorMode} = useColorMode()
 const colorSecondary = {
     light: 'gray.700',
@@ -37,6 +40,7 @@ return(
             base: '777px',
             sm: '777px',
             md: '1060px',
+            lg: '100%',
 
         }}
         >
