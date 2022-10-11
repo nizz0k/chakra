@@ -51,7 +51,7 @@ const onMouseOver = (e) => {
 
 function onEachFeature(feature, layer){
   if(feature.properties){
-    layer.bindPopup("<div class='popupImage'</div><img src=" + "https://d2qr25zh4rluwu.cloudfront.net/" + encodeURI(feature.properties.filename) + ".jpg " + "alt='peng spot photo'" + "height='200px'"  + " " + ">" + "<div>" + "Type:" + feature.properties.type + "</div><div>" + "Decription: " + feature.properties.desc + " </div>")
+    layer.bindPopup("<div class='popupImage'</div><img src=" + "https://d2qr25zh4rluwu.cloudfront.net/" + encodeURI(feature.properties.filename) + ".jpg " + "alt='peng spot photo'" + "height='200px'"  + " " + ">" + "<div>" + "Type:" + feature.properties.type + "</div><div>" + "Description: " + feature.properties.desc + " </div>")
   }
   layer.on({
       mouseover: onMouseOver,

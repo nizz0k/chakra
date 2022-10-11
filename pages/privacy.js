@@ -48,7 +48,7 @@ export default function Privacy() {
         <Text as='p'
         p={[4, 6, 8]}
         >
-            This site like many others uses Google Analytics to see who is visiting the site and how they are using it. This means that some 'private' information might get logged, but every effort is made to keep the information as anonymous as possible. I mean, it's the internet, so someone is always spying on you. The site might may implement more features in the future, but for now just enjoy the art. 
+            This site like many others uses Google Analytics to see who is visiting the site and how they are using it. This site uses Google Analytics 4 which implements IP anonymization. We explicitly use this information to see how many users are visting the site and how they are using for performance reasons. This means that some 'private' information might get logged, but every effort is made to keep the information as anonymous as possible. I mean, it's the internet, so someone is always spying on you. The site might may implement more features in the future, but for now just enjoy the art. 
         </Text>
       </VStack>
 
