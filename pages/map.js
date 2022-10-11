@@ -1,9 +1,5 @@
 import Head from 'next/head'
-import {
-  useColorMode,
-  Heading,
-  Box
-} from '@chakra-ui/react'
+import { useColorMode, Box } from '@chakra-ui/react'
 import dynamic from 'next/dynamic';
 import Container from '../components/Container'
 import points from '../data/pengs.json'
@@ -17,7 +13,7 @@ export async function getStaticProps(context){
 }
 
 export default function MapPage(props) {
-console.log(props.points)
+
 const {colorMode} = useColorMode()
 const colorSecondary = {
     light: 'gray.700',
@@ -38,13 +34,11 @@ return(
         <Box
         height={{
             base: '777px',
-            sm: '777px',
-            md: '1060px',
-            lg: '100%',
+            sm: '777px'
 
         }}
         >
-        <MapWithNoSSR points={props} />
+        <MapWithNoSSR points={props.points} />
         </Box>
 
     </Container>

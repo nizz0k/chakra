@@ -5,21 +5,24 @@ import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import 'leaflet-defaulticon-compatibility';
 
 const Map = ({points}) => {
-//Marker Base styles
+
 const markerOptions = {radius: 2, weight: 1, opacity: 1, fillOpacity: 0.8, }
 
-//Marker styles based on types
 const markerStyles = function(feature) {
-  switch (feature.properties.art_type) {
-      case 'Sticker': return {color: "#800026"};
-      case 'Mural':   return {color: "#BD0026"};
-      case 'Marker':   return {color: "#E31A1C"};
-      case 'Characters':   return {color: "#FC4E2A"};
-      case 'Letters':   return {color: "#FD8D3C"};
-      case 'Tippex':   return {color: "#FEB24C"};
-      case 'Spray':    return {color: "#FED976"}
+  switch (feature.properties.type) {
+      case 'Sticker': return {color: '#a50026'};
+      case 'Mural':   return {color: '#d73027'};
+      case 'Marker':   return {color: '#f46d43'};
+      case 'Characters':   return {color: '#fdae61'};
+      case 'Letters':   return {color: '#fee090' };
+      case 'Tippex':   return {color: '#ffffbf'};
+      case 'Spray':    return {color: '#e0f3f8'};
+      case 'Chalk':    return{color: '#abd9e9'};
+      case 'Label maker sticker':    return{color: '#74add1' };
+      case 'Poster':    return{color: '#4575b4'};
       }
 }
+
 // Map Events
 const geoJsonRef = useRef();
 
@@ -48,7 +51,7 @@ const onMouseOver = (e) => {
 
 function onEachFeature(feature, layer){
   if(feature.properties){
-    layer.bindPopup("<div class='popupImage'</div><img src=" + "https://d2qr25zh4rluwu.cloudfront.net/" + encodeURI(feature.properties.filename) + ".jpg " + "alt='peng spot photo'" + "height='200px'"  + " " + ">" + "<div>" + "Type:" + feature.properties.art_type + "</div><div>" + "Date Seen: " + feature.properties.timestamp + " </div>")
+    layer.bindPopup("<div class='popupImage'</div><img src=" + "https://d2qr25zh4rluwu.cloudfront.net/" + encodeURI(feature.properties.filename) + ".jpg " + "alt='peng spot photo'" + "height='200px'"  + " " + ">" + "<div>" + "Type:" + feature.properties.type + "</div><div>" + "Decription: " + feature.properties.desc + " </div>")
   }
   layer.on({
       mouseover: onMouseOver,

@@ -4,9 +4,11 @@ import {
   Heading,
   Text,
   Flex,
-  Stack
+  Stack,
+  Box
 } from '@chakra-ui/react'
 import Container from '../components/Container'
+import SiteLogo from '../components/Logo'
 
 export default function Index() {
   const {colorMode} = useColorMode()
@@ -42,6 +44,7 @@ export default function Index() {
           </Heading>
           <Text>A map of Peng spots in Frankfurt</Text>
         </Flex>
+      
         
       </Stack>
     
