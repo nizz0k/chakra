@@ -5,7 +5,8 @@ import {
     Box
 } from '@chakra-ui/react'
 import DarkModeSwitch from '../components/DarkModeSwitch'
-import Footer from "./Footer";
+import Footer from '../components/Footer';
+import Consent from '../components/Consent'
 
 const Container = ({children}) => {
 
@@ -36,6 +37,7 @@ const Container = ({children}) => {
         {children}
     </Flex>
     <Footer />
+    <Consent />
     </>
     )
    
