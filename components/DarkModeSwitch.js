@@ -1,4 +1,4 @@
-import { useColorMode, IconButton, Flex, Button, Spacer } from "@chakra-ui/react";
+import { useColorMode, IconButton, Flex, Button, Spacer, Box } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
 import NextLink from 'next/link'
 import { useState } from "react"
@@ -29,6 +29,12 @@ const DarkModeSwitch = () => {
         dark: 'white'
     }
 
+  const logoBg = {
+    light: 'white',
+    dark: 'white'
+  }
+
+
     const StickyNav = styled(Flex)`
     position: sticky;
     z-index: 2000;
@@ -57,7 +63,12 @@ const DarkModeSwitch = () => {
         flexDirection="row"
         width="100%"
         >
-        <SiteLogo />
+        <Box bg={logoBg[colorMode]}>
+        <SiteLogo 
+        width="100px"
+        colorMode={colorMode}
+        />
+        </Box>
         <Flex >
         <Flex 
         display={['none', 'none', 'flex', 'flex']}
@@ -126,7 +137,7 @@ const DarkModeSwitch = () => {
         flexDirection="column"
         align="center"
         justify="space-between"
-        mb='50%'
+        mb='60%'
         >
             <NextLink href="/" passHref>
                 <Button as="a" variant="ghost" p={[4, 4, 10]} _hover={{backgroundColor: navHoverBg[colorMode]}}>

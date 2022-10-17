@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import  { setCookie, hasCookie} from 'cookies-next'
-import { ButtonGroup, Flex, Button } from '@chakra-ui/react'
+import { ButtonGroup, Flex, Button, Text } from '@chakra-ui/react'
 
 function Consent() {
     const [consent, setConsent] = useState(true);
@@ -29,24 +29,32 @@ function Consent() {
       return (
         <Flex
         position='absolute'
-        width='90%'
+        flexDirection={{base: 'column', lg: 'row'}}
+        width='100%'
         bottom='0'
-        height='20px'
         alignItems='center'
+        p={2}
 
         className={`${
           consent ? 'hidden' : ''
         }`}
       >
-        This Site use cookies to function, please accept them for the best experience.
+    
+        <Text
+        fontSize={{base: 'xs', md: 'md'}}
+        >
+        This Site use cookies to function and track usage, please accept them for the best experience. Consult our Privacy policy for more information.
+        </Text>
         <Flex 
         alignItems='center'
         justify='space-between'
         pl={1}
         >
-        <ButtonGroup>
+        <ButtonGroup
+        variant='link'
+        spacing={6}
+        >
         <Button
-           variant='link'
            colorScheme='yellow'
             onClick={(e) => {
               closeP();
@@ -56,19 +64,16 @@ function Consent() {
           </Button>
           <Button
             onClick={(e) => denyCookie()}
-            variant='link'
             colorScheme='yellow'
             
           >
             Deny All
           </Button>
           <Button
-           variant='link'
            colorScheme='yellow'
             onClick={() => {
               acceptCookie();
             }}
-            className="p-2 bg-green-400 rounded-md"
           >
             Accept All
           </Button>
