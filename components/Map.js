@@ -9,7 +9,7 @@ import 'leaflet-defaulticon-compatibility';
 const Map = ({points}) => {
 
 
-const map = useMap();
+//const map = useMap();
 const zoomToFeature = (e) => {  
 const latLngs = [e.target.getLatLng()];
 const markerBounds = L.latLngBounds(latLngs);
