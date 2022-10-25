@@ -67,7 +67,7 @@ function onEachFeature(feature, layer){
   layer.on({
       mouseover: onMouseOver,
       mouseout: onMouseOut,
-      click: zoomToFeature
+//      click: zoomToFeature
   });
 }
 
