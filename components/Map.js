@@ -1,10 +1,20 @@
 import { useRef } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet'
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import 'leaflet-defaulticon-compatibility';
 
+
+
 const Map = ({points}) => {
+
+
+const map = useMap();
+const zoomToFeature = (e) => {  
+const latLngs = [e.target.getLatLng()];
+const markerBounds = L.latLngBounds(latLngs);
+map.fitBounds(markerBounds);
+}
 
 const markerOptions = {radius: 2, weight: 1, opacity: 1, fillOpacity: 0.8, }
 
@@ -39,7 +49,8 @@ const onMouseOver = (e) => {
         weight: 5,
         color: '#666',
         dashArray: '',
-        fillOpacity: 0.7
+        fillOpacity: 0.7,
+        radius: 3
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -56,7 +67,7 @@ function onEachFeature(feature, layer){
   layer.on({
       mouseover: onMouseOver,
       mouseout: onMouseOut,
-      //click: zoomToFeature
+      click: zoomToFeature
   });
 }
 
@@ -72,7 +83,7 @@ return (
     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
   />
      
-    <GeoJSON data={points} pointToLayer={pointToLayer} pathOptions={markerStyles} onEachFeature={onEachFeature}  ref={geoJsonRef} />
+    <GeoJSON data={points} pointToLayer={pointToLayer} pathOptions={markerStyles} onEachFeature={onEachFeature}  ref={geoJsonRef}  />
     </MapContainer>
 </>
 )

@@ -67,12 +67,14 @@ export default function Index() {
         </Flex>
         <Text as='p'
         fontSize='lg'
+        mt={4}
         >
             Check out more than 2,000 spots with pictures on our 
             <NextLink href='/map' passHref>
               <Button
               variant='link'
-              p={2} >
+              p={2}
+              colorScheme='yellow' >
                Map page</Button>
               </NextLink>
           </Text>

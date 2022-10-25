@@ -42,6 +42,7 @@ function Consent() {
     
         <Text
         fontSize={{base: 'xs', md: 'md'}}
+        mt={2}
         >
         This Site use cookies to function and track usage, please accept them for the best experience. Consult our Privacy policy for more information.
         </Text>
