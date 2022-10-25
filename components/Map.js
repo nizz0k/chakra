@@ -10,11 +10,11 @@ const Map = ({points}) => {
 
 
 //const map = useMap();
-const zoomToFeature = (e) => {  
-const latLngs = [e.target.getLatLng()];
-const markerBounds = L.latLngBounds(latLngs);
-map.fitBounds(markerBounds);
-}
+//const zoomToFeature = (e) => {  
+//const latLngs = [e.target.getLatLng()];
+//const markerBounds = L.latLngBounds(latLngs);
+//map.fitBounds(markerBounds);
+//}
 
 const markerOptions = {radius: 2, weight: 1, opacity: 1, fillOpacity: 0.8, }
 
