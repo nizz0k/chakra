@@ -31,6 +31,7 @@ function Consent() {
         position='absolute'
         flexDirection={{base: 'column', lg: 'row'}}
         width='100%'
+        z-index='5000'
         bottom='0'
         alignItems='center'
         p={2}

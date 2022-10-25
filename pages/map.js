@@ -33,8 +33,8 @@ return(
         </Head>
         <Box
         height={{
-            base: '777px',
-            sm: '777px'
+            base: '720px',
+            sm: '720px'
 
         }}
         >

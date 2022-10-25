@@ -31,15 +31,15 @@ export default function Index() {
       justifyContent='center'
       alignItems='flex-start'
       m='0 auto 2rem auto'
-      maxWidth='1000px'
+      width='100%'
       px={2}
       >
         <Flex
         flexDirection='column'
         justifyContent='flex-start'
         alignItems='center'
-        maxWidth='1000px'
-        mb={6}
+        width='100%'
+           mb={6}
         >
           <Heading
           mb={2}
@@ -51,19 +51,19 @@ export default function Index() {
           >A map of Peng spots in Frankfurt</Text>
           <Flex
         bg={useColorModeValue('white', 'white')}
-        width={[360, 760]}
+        width={{base: '360px', md:'760px', lg: '1000px'}}
         justifyContent='center'
         alignItems='center'
         mt={4}
         
         >
+     
           <SiteLogo 
           width='90%' 
           colorMode={useColorModeValue(colorMode)}
           style=''
-          
           />
-          
+        
         </Flex>
         <Text as='p'
         fontSize='lg'

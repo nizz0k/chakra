@@ -35,9 +35,10 @@ const Container = ({children}) => {
         
     >
         {children}
-    </Flex>
     <Footer />
     <Consent />
+    </Flex>
+
     </>
     )
    

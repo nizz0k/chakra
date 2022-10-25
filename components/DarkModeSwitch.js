@@ -54,7 +54,7 @@ const DarkModeSwitch = () => {
     as="nav"
     px={[2, 6, 6]}
     py={2}
-    mb={[0, 0, 8]}
+  //  mb={[0, 0, 8]}
     mx="auto"
     >    
         <Flex

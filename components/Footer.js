@@ -8,7 +8,7 @@ const Footer = () => {
 flexDirection='row'
 width='100%'
 height='30px'
-
+verticalAlign='bottom'
 >
 <NextLink href='/privacy' passHref>
 <Button
