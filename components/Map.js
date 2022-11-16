@@ -1,9 +1,9 @@
 import { MapContainer, TileLayer, } from 'react-leaflet'
 import GeoJSONLayer from './GeoJSONLayer'
+import CircleMarkerLayer from './CircleMarkerLayer' 
 import 'leaflet/dist/leaflet.css'
 
 const Map = ({points}) => {
-console.log(points)
 
 return (
     <>
@@ -13,7 +13,7 @@ return (
     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
   />
   
-   <GeoJSONLayer data={points}/>
+    <CircleMarkerLayer data={points} />
     </MapContainer>
 </>
 )
