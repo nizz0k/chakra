@@ -6,17 +6,17 @@ const CircleMarkerLayer = ({ data }) => {
     const { coordinates } = feature.geometry
     const markerStyles = function(feature) {
         switch (feature.properties.type) {
-            case 'Sticker': return {color: '#a50026'};
-            case 'Mural':   return {color: '#d73027'};
-            case 'Marker':   return {color: '#f46d43'};
-            case 'Characters':   return {color: '#fdae61'};
-            case 'Letters':   return {color: '#fee090' };
-            case 'Tippex':   return {color: '#ffffbf'};
-            case 'Spray':    return {color: '#e0f3f8'};
-            case 'Chalk':    return{color: '#abd9e9'};
-            case 'Crayon':    return{color: '#74add1'}
-            case 'Label maker sticker':    return{color: '#4575b4' };
-            case 'Poster':    return{color: '#313695'};
+            case 'Sticker': return {color: '#a50026', fillOpacity: 1};
+            case 'Mural':   return {color: '#d73027', fillOpacity: 1};
+            case 'Marker':   return {color: '#f46d43', fillOpacity: 1};
+            case 'Characters':   return {color: '#fdae61', fillOpacity: 1};
+            case 'Letters':   return {color: '#fee090', fillOpacity: 1 };
+            case 'Tippex':   return {color: '#ffffbf', fillOpacity: 1};
+            case 'Spray':    return {color: '#e0f3f8', fillOpacity: 1};
+            case 'Chalk':    return{color: '#abd9e9', fillOpacity: 1};
+            case 'Crayon':    return{color: '#74add1', fillOpacity: 1}
+            case 'Label maker sticker':    return{color: '#4575b4', fillOpacity: 1};
+            case 'Poster':    return{color: '#313695', fillOpacity: 1};
             }
       }
       const markMouseOut = {
