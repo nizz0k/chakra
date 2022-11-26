@@ -1,32 +1,31 @@
 import React, {useState} from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Modal, ModalContent, ModalBody, ModalCloseButton, Flex, ModalOverlay, ModalHeader, useDisclosure } from '@chakra-ui/react'
 
-const LightBox = ({children, src, alt, Wrapper = 'div'}, zIndex=1) => {
-    const [ isOpen, setisOpen ] = useState(false)
+const LightBox = ({children, src, alt, Wrapper = 'div'}, zIndex=200) => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    //const [ isOpen, setisOpen ] = useState(false)
     
-    const toggleIsOpen = () =>{
-        setisOpen(!isOpen)
-    }
+    //const toggleIsOpen = () =>{
+    //    setisOpen(!isOpen)
+    //}
 
     return (
     <Wrapper
-    onClick={toggleIsOpen}
+    onClick={onOpen}
     >
+
         {children}
         {isOpen ?
-            <Flex onClick={toggleIsOpen}
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>
+                        <ModalCloseButton />
+                    </ModalHeader>
+
+            <Flex
+             onClick={onClose}           
             
-             style={{
-					position: 'fixed',
-					top: '0',
-					left: '0',
-					height: '100vh',
-					width: '100vh',
-					backgroundColor: 'rgba(0,0,0,0.7)',
-					cursor: 'pointer',
-                    zIndex
-			
-				}}
             >
                 <img src={src}
 						alt={alt}
@@ -35,7 +34,9 @@ const LightBox = ({children, src, alt, Wrapper = 'div'}, zIndex=1) => {
 							width: '100%'
 						}}
 					/>
-            </Flex>
+               </Flex> 
+               </ModalContent>
+            </Modal>
         :null}
     </Wrapper>
     )
