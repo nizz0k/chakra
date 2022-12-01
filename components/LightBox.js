@@ -1,13 +1,8 @@
 import React, {useState} from 'react'
 import { Modal, ModalContent, ModalBody, ModalCloseButton, Flex, ModalOverlay, ModalHeader, useDisclosure } from '@chakra-ui/react'
 
-const LightBox = ({children, src, alt, Wrapper = 'div'}, zIndex=200) => {
+const LightBox = ({children, src, alt, Wrapper = 'div'} ) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    //const [ isOpen, setisOpen ] = useState(false)
-    
-    //const toggleIsOpen = () =>{
-    //    setisOpen(!isOpen)
-    //}
 
     return (
     <Wrapper
@@ -16,13 +11,13 @@ const LightBox = ({children, src, alt, Wrapper = 'div'}, zIndex=200) => {
 
         {children}
         {isOpen ?
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} size='lg' onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent>
+                <ModalContent >
                     <ModalHeader>
                         <ModalCloseButton />
                     </ModalHeader>
-
+            <ModalBody >
             <Flex
              onClick={onClose}           
             
@@ -35,6 +30,7 @@ const LightBox = ({children, src, alt, Wrapper = 'div'}, zIndex=200) => {
 						}}
 					/>
                </Flex> 
+               </ModalBody>
                </ModalContent>
             </Modal>
         :null}
