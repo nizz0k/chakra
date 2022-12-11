@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { GeoJSON, useMap } from 'react-leaflet'; 
+import { GeoJSON, Popup, useMap } from 'react-leaflet'; 
+import PopupContent from './GeoJSONPopupContent';
 
 const GeoJSONLayer = ({ data }) =>{
     const map = useMap();
@@ -29,7 +30,7 @@ const GeoJSONLayer = ({ data }) =>{
     const geoJsonRef = useRef();
     const onMouseOut = (e) => {
       var layer = e.target;
-      geoJsonRef.current.setStyle(markerOptions);
+      geoJsonRef.current.setStyle(markerStyles);
     }
     
     const onMouseOver = (e) => {
@@ -49,9 +50,6 @@ const GeoJSONLayer = ({ data }) =>{
     }
     
     function onEachFeature(feature, layer){
-      if(feature.properties){
-        layer.bindPopup("<div class='popupImage'</div><img src=" + "https://d2qr25zh4rluwu.cloudfront.net/" + encodeURI(feature.properties.filename) + ".jpg " + "alt='peng spot photo'" + "height='200px'"  + " " + ">" + "<div>" + "Type: " + feature.properties.type + "</div><div>" + "Description: " + feature.properties.desc + " </div>")
-      }
       layer.on({
           mouseover: onMouseOver,
           mouseout: onMouseOut,
@@ -63,7 +61,11 @@ const GeoJSONLayer = ({ data }) =>{
       return L.circleMarker(latLng, markerOptions)
     }  
     return(
-      <GeoJSON data={data} pointToLayer={pointToLayer} pathOptions={markerStyles} onEachFeature={onEachFeature}  ref={geoJsonRef}  />
+      <GeoJSON data={data} pointToLayer={pointToLayer} pathOptions={markerStyles} onEachFeature={onEachFeature}  ref={geoJsonRef}  >
+        <Popup>
+            <PopupContent content={data} />
+        </Popup>
+      </GeoJSON>
     )
   
   }

@@ -5,6 +5,7 @@ import Container from '../components/Container'
 import points from '../data/pengs.json'
 
 export async function getStaticProps(context){
+
    return{
     props: {
         points,
@@ -26,7 +27,7 @@ ssr: false
 
 return(
     <>
-    <Container>
+    <Container >
         <Head> 
             <title>Map</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
