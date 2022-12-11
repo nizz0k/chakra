@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import { Modal, ModalContent, ModalBody, ModalCloseButton, Flex, ModalOverlay, ModalHeader, useDisclosure } from '@chakra-ui/react'
 
 const LightBox = ({children, src, alt, Wrapper = 'div'} ) => {
