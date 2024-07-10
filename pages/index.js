@@ -23,7 +23,7 @@ export default function Index() {
     <>
    <Container >
     <Head>
-      <title>Home </title>
+      <title>Peng War Hier - Home </title>
       <meta name="description" content="A project mapping the graffiti art of Peng in Frankfurt am Main" />
     </Head>
       <Stack
