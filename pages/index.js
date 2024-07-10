@@ -13,6 +13,8 @@ import Container from '../components/Container'
 import SiteLogo from '../components/Logo'
 import NextLink from 'next/link'
 
+
+
 export default function Index() {
   const {colorMode} = useColorMode()
   const colorSecondary = {
@@ -23,7 +25,9 @@ export default function Index() {
     <>
    <Container >
     <Head>
-      <title>Home </title>
+      <title>Peng War Hier - Home </title>
+      <meta name="description" content="A web map of graffiti by Peng in Frankfurt" />
+
     </Head>
       <Stack
       as="main"

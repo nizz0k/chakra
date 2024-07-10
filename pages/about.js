@@ -21,6 +21,7 @@ export default function About() {
    <Container >
     <Head>
       <title>About the Map </title>
+      <meta name="description" content="About the Peng Map project." />
     </Head>
       <Stack
       as="main"

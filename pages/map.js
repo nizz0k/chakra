@@ -31,6 +31,7 @@ return(
         <Head> 
             <title>Map</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <meta name="description" content="The map of geotagged pictures of graffiti by Peng using Leaflet." />
         </Head>
         <Box
         height={{
